@@ -4,6 +4,7 @@ import HeaderLogOut from "../../components/Header_logout/Header_logout";
 import Chat from "../../assets/img/icon-chat.png";
 import Money from "../../assets/img/icon-money.png";
 import Security from "../../assets/img/icon-security.png";
+import Footer from "../../components/Footer/Footer";
 
 
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
                     />
                 </section>
             </main>
+            <Footer/>
         </div>
     );
 }
