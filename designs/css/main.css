@@ -124,6 +124,7 @@ body {
   }
 }
 /* Banner */
+/* Feature */
 .features {
   display: flex;
   flex-direction: column;
@@ -153,6 +154,7 @@ body {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
+/* Feature */
 
 .sign-in-button {
   display: block;

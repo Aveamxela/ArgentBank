@@ -9,6 +9,7 @@
         position: relative;
         top: 2rem;
         width: 200px;
+        height: auto;
         background: white;
         padding: 2rem;
         text-align: left;
@@ -16,10 +17,10 @@
         .subtitle {
             font-weight: bold;
             font-size: 1rem;
-            margin: 0;
+            margin : 0 0 2px 0;
         }
         .text {
-            margin-bottom: 0;
+            margin: 15px 0 0 0;
             font-size: 0.9rem;
         }
     }
