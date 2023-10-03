@@ -10,8 +10,9 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/profile" element={<Profile />} />
                     <Route path="/signin" element={<SignIn />} />
+                    <Route path="/signin/profile" element={<Profile />} />
+
                     {/* path="*" fonctionne si jamais l'url ne correspond à rien de déclaré au dessus */}
                     <Route path="*" element={<Error />} />
                 </Routes>

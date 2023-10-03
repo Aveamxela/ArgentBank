@@ -1,4 +1,5 @@
 import { BiSolidUserCircle } from "react-icons/bi";
+import { Link } from "react-router-dom";
 // Pas terminé 
 export default function SignInCard() {
     return (
@@ -18,7 +19,10 @@ export default function SignInCard() {
                     <input type="checkbox" id="remember-me" />
                     <label htmlFor="remember-me">Remember me</label>
                 </div>
-                <button className="sign-in-button" type="submit" >Sign In</button>
+                <Link className="link item" to="./profile">Sign In</Link>
+                <button className="sign-in-button" type="submit">
+                    Sign In
+                </button>
             </form>
         </section>
     );
