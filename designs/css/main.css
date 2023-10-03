@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
+/* SignInPage */
 .main {
   flex: 1;
 }
@@ -20,6 +20,7 @@ body {
 .bg-dark {
   background-color: #12002b;
 }
+/* SignInPage */
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
@@ -155,7 +156,7 @@ body {
   margin-bottom: 0.5rem;
 }
 /* Feature */
-
+/* SignInCard */
 .sign-in-button {
   display: block;
   width: 100%;
@@ -204,7 +205,7 @@ body {
   padding: 5px;
   font-size: 1.2rem;
 }
-
+/* SignInCard */
 /* Footer */
 .footer {
   display: flex;
