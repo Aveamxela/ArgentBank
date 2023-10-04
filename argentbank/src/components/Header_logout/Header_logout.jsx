@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 export default function HeaderLogOut() {
     return (
-        <nav class="main-nav">
+        <nav className="main-nav">
             {/* A vérifier */}
             <Link className="link" to="./">
                 <img

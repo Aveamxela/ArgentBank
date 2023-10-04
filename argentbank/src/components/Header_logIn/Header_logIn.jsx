@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function HeaderLogIn() {
     return (
-        <nav class="main-nav">
+        <nav className="main-nav">
             {/* Vérifier routes */}
             <Link className="link" to="./">
                 <img className="image" src={Logo} alt="Argent Bank Logo" />
