@@ -2,7 +2,8 @@ import { BiSolidUserCircle } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { fetchUserLogin } from "../../Redux/fetch/userLogin";
+import { fetchUserLogin } from "../../Redux/fetch/fetchUserLogin";
+import { logIn } from "../../Redux/reducers/authSlice";
 
 // Pas terminé
 
@@ -30,12 +31,15 @@ export default function SignInCard() {
         if (fetchUserLogin.fulfilled.match(result)) {
             // authentification réussie donc on stocke le token
             const token = result.payload;
+            dispatch(logIn({ token }));
+
             console.log("Connexion réussie, token :", token);
             // Clear the form
             setEmail("");
             setPassword("");
             setErrorMsg("");
-            navigate("/signin/profile");
+
+            navigate("/signin/user");
         } else if (fetchUserLogin.rejected.match(result)) {
             // Clear the form
             setEmail("");

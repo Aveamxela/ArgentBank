@@ -6,7 +6,7 @@ export default function SignIn() {
     return (
         <div>
             <HeaderLogOut />
-                <main class="main bg-dark">
+                <main className="main bg-dark">
                     <SignInCard/>
                 </main>
             <Footer/>

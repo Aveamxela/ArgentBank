@@ -1,12 +1,23 @@
 import HeaderLogIn from "../../components/Header_logIn/Header_logIn";
-import Footer from "../../components/Footer/Footer"
+import Footer from "../../components/Footer/Footer";
 import Account from "../../components/Account/Account";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUserData } from "../../Redux/fetch/fetchUserData";
+import EditUserData from "../../components/UserData/EditUserData";
+import { currentToken } from "../../Redux/reducers/authSlice";
+import { getUserData } from "../../Redux/reducers/userSlice";
+import {useEffect} from "react";
 
+export default function User() {
+    const dispatch = useDispatch();
+    const token = useSelector(currentToken);
+    const userData = useSelector(getUserData)
+    const firstName = userData.payload.user.firstName;
+    const lastName = userData.payload.user.lastName;
 
-
-export default function Profile(){
-    // S'occuper du bouton Edit
-
+useEffect(() => {
+    dispatch(fetchUserData(token));
+}, [dispatch, token]);
 
     return (
         <div>
@@ -16,9 +27,9 @@ export default function Profile(){
                     <h1>
                         Welcome back
                         <br />
-                        Tony Jarvis!
+                        {firstName} {lastName} !
                     </h1>
-                    <button className="edit-button">Edit Name</button>
+                    <EditUserData />
                 </div>
                 <h2 className="sr-only">Accounts</h2>
                 <Account
