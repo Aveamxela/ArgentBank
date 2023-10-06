@@ -6,7 +6,7 @@ export default function HeaderLogOut() {
     return (
         <nav className="main-nav">
             {/* A vérifier */}
-            <Link className="link" to="./">
+            <Link className="link" to="/">
                 <img
                     className="image"
                     src={Logo}

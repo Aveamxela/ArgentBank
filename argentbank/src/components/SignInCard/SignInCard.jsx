@@ -38,8 +38,8 @@ export default function SignInCard() {
             setEmail("");
             setPassword("");
             setErrorMsg("");
+            navigate("/user");
 
-            navigate("/signin/user");
         } else if (fetchUserLogin.rejected.match(result)) {
             // Clear the form
             setEmail("");

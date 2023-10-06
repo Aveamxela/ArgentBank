@@ -12,7 +12,7 @@ export default function HeaderLogIn() {
     return (
         <nav className="main-nav">
             {/* Vérifier routes */}
-            <Link className="link" to="./">
+            <Link className="link" to="/">
                 <img className="image" src={Logo} alt="Argent Bank Logo" />
                 <h1 className="sr-only">Argent Bank</h1>
             </Link>
@@ -21,7 +21,7 @@ export default function HeaderLogIn() {
                     <BiSolidUserCircle className="iconUser" />
                     <p>{userName}</p>
                 </Link>
-                <Link className="link item" to="./">
+                <Link className="link item" to="/">
                     <FaSignOutAlt className="iconSignOut" />
                     Sign Out
                 </Link>
