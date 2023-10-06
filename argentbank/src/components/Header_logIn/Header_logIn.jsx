@@ -3,13 +3,12 @@ import { BiSolidUserCircle } from "react-icons/bi";
 import {FaSignOutAlt} from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getUserData } from "../../Redux/reducers/userSlice";
 
 export default function HeaderLogIn() {
- const userData = useSelector(getUserData);
- console.log({ userData });
 
- const userName = userData.payload.user.userName;
+ const userName = useSelector((state)=> state.user.userName)
+ console.log(userName)
+
     return (
         <nav className="main-nav">
             {/* Vérifier routes */}
@@ -20,7 +19,7 @@ export default function HeaderLogIn() {
             <div className="header-profile">
                 <Link className="link item" to="./">
                     <BiSolidUserCircle className="iconUser" />
-                    {userName}
+                    <p>{userName}</p>
                 </Link>
                 <Link className="link item" to="./">
                     <FaSignOutAlt className="iconSignOut" />

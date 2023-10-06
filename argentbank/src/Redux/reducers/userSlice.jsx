@@ -10,6 +10,7 @@ const userSlice = createSlice({
     },
     reducers: {
         getUserData: (state, action) => {
+            // state : état actuel de la tranche (avec initialState)
             state.email = action.payload.data.body.email;
             state.firstName = action.payload.data.body.firstName;
             state.lastName = action.payload.data.body.lastName;
@@ -20,5 +21,5 @@ const userSlice = createSlice({
         },
     },
 });
-export const { getUserData, setUserName } = userSlice.actions;
+export const { getUserData, setEditUserName } = userSlice.actions;
 export default userSlice.reducer;

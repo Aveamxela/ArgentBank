@@ -4,41 +4,58 @@ import { getUserData } from "../../Redux/reducers/userSlice";
 import { currentToken } from "../../Redux/reducers/authSlice";
 import { useEffect } from "react";
 import { fetchUserData } from "../../Redux/fetch/fetchUserData";
+import { fetchPutUsername } from "../../Redux/fetch/fetchPutUsername";
 
 export default function EditUserData() {
     const dispatch = useDispatch();
 
-    const [isUserName, setUsername] = useState("");
     const [isEditing, setEditing] = useState(false);
 
     const userData = useSelector(getUserData);
     console.log({ userData });
+
     const userName = userData.payload.user.userName;
     console.log({ userName });
+
     const firstName = userData.payload.user.firstName;
     console.log({ firstName });
+
     const lastName = userData.payload.user.lastName;
     console.log({ lastName });
 
+    const [isUserName, setUsername] = useState("");
+    console.log({ isUserName });
+
     const token = useSelector(currentToken);
+
+    const changeUsername = (e) => {
+        e.preventDefault();
+        dispatch(fetchPutUsername({ token, newUserName: isUserName }));
+        setEditing(false);
+    };
 
     useEffect(() => {
         dispatch(fetchUserData(token));
     }, [dispatch, token]);
 
+    useEffect(() => {
+        setUsername(userName);
+    }, [userName]);
+
     return (
         <div>
             {isEditing ? (
-                <div className="edit-content">
+                <form onSubmit={changeUsername} className="edit-content">
                     <div className="input-wrapper">
                         <div className="userDataInput">
                             <p className="p-input">Username</p>
                             <input
-                            className="input-username"
+                                className="input-username"
                                 type="text"
                                 id="username"
-                                value={userName}
+                                value={isUserName}
                                 onChange={(e) => setUsername(e.target.value)}
+                                onClick={() => setUsername("")}
                             />
                         </div>
                         <div className="userDataInput">
@@ -62,12 +79,9 @@ export default function EditUserData() {
                     </div>
 
                     <div className="button-edit">
-                        <button
-                            onClick="DONNER FONCTION"
-                            className="edit-button save"
-                        >
+                        <button type="submit" className="edit-button save">
                             Save
-                        </button>{" "}
+                        </button>
                         <button
                             onClick={() => setEditing(false)}
                             className="edit-button cancel"
@@ -75,7 +89,7 @@ export default function EditUserData() {
                             Cancel
                         </button>
                     </div>
-                </div>
+                </form>
             ) : (
                 <div>
                     <button
