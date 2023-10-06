@@ -17,7 +17,6 @@ function App() {
                     <Route path="/signin" element={<SignIn />} />
                     <Route path="/user" element={token ? <User /> : <Navigate to="/sign-in" />}
                     />
-                    {/* <Route path="/signin/user" element={<User />} /> */}
                     {/* path="*" fonctionne si jamais l'url ne correspond à rien de déclaré au dessus */}
                     <Route path="*" element={<Error />} />
                 </Routes>

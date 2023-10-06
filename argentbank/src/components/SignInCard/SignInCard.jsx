@@ -12,6 +12,7 @@ export default function SignInCard() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMsg, setErrorMsg] = useState("");
+    const [rememberMe, setRememberMe] = useState(false);
 
     // Redux states
     const dispatch = useDispatch();
@@ -32,14 +33,19 @@ export default function SignInCard() {
             // authentification réussie donc on stocke le token
             const token = result.payload;
             dispatch(logIn({ token }));
-
+             if (rememberMe) {
+                 window.localStorage.setItem("token", token);
+                 console.log("dans local storage")
+             } else {
+                 window.sessionStorage.setItem("token", token);
+                 console.log("dans session storage")
+             }
             console.log("Connexion réussie, token :", token);
             // Clear the form
             setEmail("");
             setPassword("");
             setErrorMsg("");
             navigate("/user");
-
         } else if (fetchUserLogin.rejected.match(result)) {
             // Clear the form
             setEmail("");
@@ -75,7 +81,12 @@ export default function SignInCard() {
                     />
                 </div>
                 <div className="input-remember">
-                    <input type="checkbox" id="remember-me" />
+                    <input
+                        type="checkbox"
+                        id="remember-me"
+                        checked={rememberMe}
+                        onChange={(e) => setRememberMe(e.target.checked)}
+                    />
                     <label htmlFor="remember-me">Remember me</label>
                 </div>
                 <button className="sign-in-button" type="submit">

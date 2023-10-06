@@ -1,16 +1,16 @@
 import Banner from "../../components/Banner/banner";
 import Feature from "../../components/Feature/Feature";
-import HeaderLogOut from "../../components/Header_logout/Header_logout";
 import Chat from "../../assets/img/icon-chat.png";
 import Money from "../../assets/img/icon-money.png";
 import Security from "../../assets/img/icon-security.png";
 import Footer from "../../components/Footer/Footer";
+import HeaderLogIn from "../../components/Header_logIn/Header_logIn";
 
 
 export default function Home() {
     return (
         <div>
-            <HeaderLogOut />
+            <HeaderLogIn />
             <main>
                 <Banner />
                 <section className="features">
