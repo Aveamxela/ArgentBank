@@ -256,7 +256,6 @@ body {
   width: 100%;
   flex: 1;
 }
-/* Account */
 
 .edit-button {
   border-color: #00bc77;
@@ -270,7 +269,7 @@ body {
   color: #fff;
   margin-bottom: 2rem;
 }
-/* Account */
+
 .transaction-button {
   display: block;
   width: 100%;

@@ -8,28 +8,20 @@ import { fetchPutUsername } from "../../Redux/fetch/fetchPutUsername";
 
 export default function EditUserData() {
     const dispatch = useDispatch();
-
+    // Indique si l'utilisateur est en mode edition ou non
     const [isEditing, setEditing] = useState(false);
-
     const userData = useSelector(getUserData);
-    console.log({ userData });
-
+    // Extraction des données
     const userName = userData.payload.user.userName;
-    console.log({ userName });
-
     const firstName = userData.payload.user.firstName;
-    console.log({ firstName });
-
     const lastName = userData.payload.user.lastName;
-    console.log({ lastName });
-
+    // Stocke le nouveau username
     const [isUserName, setUsername] = useState("");
-    console.log({ isUserName });
-
     const token = useSelector(currentToken);
 
     const changeUsername = (e) => {
         e.preventDefault();
+        // Mise à jour de username
         dispatch(fetchPutUsername({ token, newUserName: isUserName }));
         setEditing(false);
     };

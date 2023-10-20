@@ -17,7 +17,6 @@ export const fetchUserData = createAsyncThunk("fetchUserData", async (token, thu
         }
         const data = await response.json();
         thunkAPI.dispatch(getUserData({ data }));
-        console.log({data})
         const userData = data.body;
         console.log({userData});
         return userData;

@@ -1,16 +1,15 @@
 import Banner from "../../components/Banner/banner";
 import Feature from "../../components/Feature/Feature";
-import Chat from "../../assets/img/icon-chat.png";
-import Money from "../../assets/img/icon-money.png";
-import Security from "../../assets/img/icon-security.png";
+import Chat from "../../assets/img/icon-chat.webp";
+import Money from "../../assets/img/icon-money.webp";
+import Security from "../../assets/img/icon-security.webp";
 import Footer from "../../components/Footer/Footer";
-import HeaderLogIn from "../../components/Header_logIn/Header_logIn";
-
+import Header from "../../components/Header/Header";
 
 export default function Home() {
     return (
         <div>
-            <HeaderLogIn />
+            <Header />
             <main>
                 <Banner />
                 <section className="features">

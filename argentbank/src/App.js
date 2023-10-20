@@ -8,14 +8,17 @@ import { currentToken } from "./Redux/reducers/authSlice";
 import { Navigate } from "react-router-dom";
 
 function App() {
-        const token = useSelector(currentToken);
+    // Utilisation du hook useSelector pour obtenir le token actuel
+    const token = useSelector(currentToken);
     return (
         <div className="App">
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/signin" element={<SignIn />} />
-                    <Route path="/user" element={token ? <User /> : <Navigate to="/sign-in" />}
+                    <Route
+                        path="/user"
+                        element={token ? <User /> : <Navigate to="/sign-in" />}
                     />
                     {/* path="*" fonctionne si jamais l'url ne correspond à rien de déclaré au dessus */}
                     <Route path="*" element={<Error />} />

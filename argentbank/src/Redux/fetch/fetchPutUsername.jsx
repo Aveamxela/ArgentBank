@@ -22,8 +22,6 @@ export const fetchPutUsername = createAsyncThunk(
             const data = await response.json();
             console.log({ data });
             const userNameData = data.body.userName;
-            console.log({ userNameData });
-
             thunkAPI.dispatch(setEditUserName(userNameData));
             console.log({ userNameData });
             return userNameData;

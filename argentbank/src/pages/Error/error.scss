@@ -1,0 +1,26 @@
+.bg{
+    background-color: #12002b;
+    min-height: calc(100vh - 64px);
+}
+.center{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:white;
+}
+.img-error{
+    width: 30%;
+    height: fit-content;
+}
+.button-home {
+        display: flex;
+        padding: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        border-color: #00bc77;
+        background-color: #00bc77;
+        color: #fff;
+        text-decoration: none;
+    }

@@ -1,4 +1,3 @@
-import HeaderLogIn from "../../components/Header_logIn/Header_logIn";
 import Footer from "../../components/Footer/Footer";
 import Account from "../../components/Account/Account";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,21 +6,24 @@ import EditUserData from "../../components/UserData/EditUserData";
 import { currentToken } from "../../Redux/reducers/authSlice";
 import { getUserData } from "../../Redux/reducers/userSlice";
 import {useEffect} from "react";
+import Header from "../../components/Header/Header";
 
 export default function User() {
     const dispatch = useDispatch();
     const token = useSelector(currentToken);
-    const userData = useSelector(getUserData)
+    const userData = useSelector(getUserData);
+    // Extraction prénom/nom à partir des données obtenues du store Redux
     const firstName = userData.payload.user.firstName;
     const lastName = userData.payload.user.lastName;
 
-useEffect(() => {
-    dispatch(fetchUserData(token));
-}, [dispatch, token]);
+    useEffect(() => {
+        //pour obtenir les données de l'utilisateur en utilisant le token
+        dispatch(fetchUserData(token));
+    }, [dispatch, token]);
 
     return (
         <div>
-            <HeaderLogIn />
+            <Header />
             <main className="main bg-dark profile">
                 <div className="header">
                     <h1>
