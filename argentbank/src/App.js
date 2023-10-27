@@ -18,7 +18,7 @@ function App() {
                     <Route path="/signin" element={<SignIn />} />
                     <Route
                         path="/user"
-                        element={token ? <User /> : <Navigate to="/sign-in" />}
+                        element={token ? <User /> : <Navigate to="/signin" />}
                     />
                     {/* path="*" fonctionne si jamais l'url ne correspond à rien de déclaré au dessus */}
                     <Route path="*" element={<Error />} />
